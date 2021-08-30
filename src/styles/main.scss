@@ -1,6 +1,8 @@
-@import "./0-settings/fonts";
+@use './0-settings/colors';
+@use "./0-settings/fonts";
 
-@import "./2-generic/normalize";
-@import "./2-generic/reset";
+@use "./1-generic/normalize";
+@use "./1-generic/resets";
 
-@import "./3-base/defaults";
+@use "./2-base/page";
+@use "./2-base/text";

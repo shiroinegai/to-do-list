@@ -1,3 +1,7 @@
+/* =============================================================================
+ # FONTS
+============================================================================= */
+
 @font-face {
   font-family: "Recursive";
   src: url(../assets/Recursive_VF_1.079.woff2)
@@ -5,4 +9,8 @@
     url(../assets/Recursive_VF_1.079.woff2) format("woff2-variations");
   font-weight: 300 1000;
   font-display: swap;
+}
+
+:root {
+  --font-primary: "Recursive", sans-serif;
 }
