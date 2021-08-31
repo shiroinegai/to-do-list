@@ -2,8 +2,6 @@
  # TEXT
 ============================================================================= */
 
-@use '../tools' as *;
-
 body {
-  color: setAlpha(var(--color-primary), 0.8);
+  color: var(--color-primary);
 }
