@@ -1,19 +1,27 @@
 import { setTask } from "./App";
+import { v4 as uuidv4 } from "uuid";
 
 const createTask = (
-  projectName = "default",
+  projectRef = "default",
   header = "What to do...",
   description = "Still pondering...",
   startTime = 14529165,
   endTime = 189016257
 ) => {
-  //TODO
-  const task = { header, description, startTime, endTime };
+  const task = {
+    id: uuidv4(),
+    projectRef,
+    header,
+    description,
+    startTime,
+    endTime,
+  };
 
-  setTask(projectName, task);
+  setTask("create", projectRef, task);
 };
-const readTask = () => {
+const readTask = (projectRef) => {
   //TODO
+  return setTask("read", projectRef);
 };
 const updateTask = () => {
   //TODO

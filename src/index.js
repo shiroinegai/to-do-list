@@ -18,3 +18,5 @@ console.log(getState());
 createTask("Test");
 createTask("Test");
 console.log(getState());
+console.log(readTask("default"));
+console.log(readTask("Test"));

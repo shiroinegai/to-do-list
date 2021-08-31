@@ -7,16 +7,33 @@ const setState = (newState) => {
   state = { ...state, ...newState };
 };
 
-const setTask = (projectName, task) => {
+const setTask = (action, projectRef, task) => {
   const projects = state.projects;
-  for (let i = 0; i < projects.length; i++) {
-    const projectEntry = projects[i];
-    if (projectEntry[projectName]) {
-      projectEntry[projectName].push(task);
-      return;
-    }
+
+  switch (action) {
+    case "create":
+      for (let i = 0; i < projects.length; i++) {
+        const projectEntry = projects[i];
+        if (projectEntry[projectRef]) {
+          projectEntry[projectRef].push(task);
+          return;
+        }
+      }
+      projects.push({ [projectRef]: [task] });
+      break;
+
+    case "read":
+      for (let i = 0; i < projects.length; i++) {
+        const projectEntry = projects[i];
+        if (projectEntry[projectRef]) {
+          return projectEntry;
+        }
+      }
+      break;
+
+    default:
+      break;
   }
-  projects.push({ [projectName]: [{ ...task }] });
 };
 
 export { main, getState, setState, setTask };
