@@ -29,57 +29,57 @@ const newProject = (name, color, image = "", isFavourite, view = "list") => {
 /**
  * @public
  * @function createProject
- * @param {string} name 
- * @param {string} color 
- * @param {string} image 
- * @param {boolean} isFavourite 
- * @param {string} view 
+ * @param {string} name
+ * @param {string} color
+ * @param {string} image
+ * @param {boolean} isFavourite
+ * @param {string} view
  */
 const createProject = (name, color, image, isFavourite, view) => {
-  projects.push(newProject(name, color, image, isFavourite, view))
+  projects.push(newProject(name, color, image, isFavourite, view));
 };
 
 /**
  * @public
  * @function readProject
- * @param {string} id 
+ * @param {string} id
  * @returns {Project}
  */
 const readProject = (id) => {
-  return findProjectById(id)
+  return findProjectById(id);
 };
 
 /**
  * @public
  * @function updateProject
- * @param {string} id 
- * @param {Project} projectUpdates 
+ * @param {string} id
+ * @param {Project} projectUpdates
  */
 const updateProject = (id, projectUpdates) => {
-  let project = findProjectById(id)
-  project = {...project, ...projectUpdates}
+  let project = findProjectById(id);
+  project = { ...project, ...projectUpdates };
 };
 
 /**
  * @public
  * @function deleteProject
- * @param {string} id 
+ * @param {string} id
  */
 const deleteProject = (id) => {
-  projects = projects.filter(project => project.id === id)
+  projects = projects.filter((project) => project.id === id);
 };
 
 /**
  * @private
  * @function findProjectById
- * @param {string} id 
+ * @param {string} id
  * @returns {Project}
  */
 function findProjectById(id) {
   for (let i = 0; i < projects.length; i++) {
     const project = projects[i];
     if (project.id === id) {
-      return project
+      return project;
     }
   }
 }
@@ -94,18 +94,20 @@ const freshProjectInstance = {
   color: "none",
   image: "",
   isFavourite: false,
-  sections: [{ id: "inbox-top-section", projectId: "inbox", name: "", tasks = [] }],
+  sections: [
+    { id: "inbox-top-section", projectId: "inbox", name: "", tasks: [] },
+  ],
   view: "list",
-}
+};
 
 /**
  * @public
  * @function resetProjects
  */
 const resetProjects = () => {
-  projects.length = 0
-  projects.push(freshProjectInstance)
-}
+  projects.length = 0;
+  projects.push(freshProjectInstance);
+};
 
 /**
  * @public
@@ -113,6 +115,13 @@ const resetProjects = () => {
  */
 const useProjectsSample = () => {
   //TODO
-}
+};
 
-export { createProject, readProject, updateProject, deleteProject, resetProjects, useProjectsSample };
+export {
+  createProject,
+  readProject,
+  updateProject,
+  deleteProject,
+  resetProjects,
+  useProjectsSample,
+};
