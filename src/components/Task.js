@@ -1,27 +1,54 @@
-import { setTask } from "./App";
 import { v4 as uuidv4 } from "uuid";
 
-const createTask = (
-  projectRef = "default",
-  header = "What to do...",
-  description = "Still pondering...",
-  startTime = 14529165,
-  endTime = 189016257
+/**
+ * Task factory function
+ * @param {string} parentId
+ * @param {string} projectId
+ * @param {string} header
+ * @param {string} description
+ * @param {number} startTime Defaults to Task creation time
+ * @param {number} dueDate
+ * @param {string[]} labels Initialises to empty array if none provided
+ * @param {string} priority
+ * @returns {Task} Task object
+ */
+const newTask = (
+  parentId = "default",
+  projectId = "default",
+  header,
+  description,
+  startTime = Date.now(),
+  dueDate,
+  labels = [],
+  priority
 ) => {
-  const task = {
-    id: uuidv4(),
-    projectRef,
+  const id = uuidv4();
+  const endTime = null;
+  const isComplete = false;
+  const subTasks = [];
+
+  return {
+    id,
+    parentId,
+    projectId,
     header,
     description,
     startTime,
     endTime,
+    dueDate,
+    labels,
+    priority,
+    isComplete,
+    subTasks,
   };
-
-  setTask("create", projectRef, task);
 };
-const readTask = (projectRef) => {
+
+const createTask = () => {
   //TODO
-  return setTask("read", projectRef);
+};
+
+const readTask = () => {
+  //TODO
 };
 const updateTask = () => {
   //TODO
@@ -30,4 +57,4 @@ const deleteTask = () => {
   //TODO
 };
 
-export { createTask, readTask, updateTask, deleteTask };
+export { newTask, createTask, readTask, updateTask, deleteTask };
