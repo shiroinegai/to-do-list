@@ -7,5 +7,5 @@
  * @property {string} image Project background image
  * @property {boolean} isFavourite Indicate if Project is favourite
  * @property {Section[]} sections Array of Section children
- * @property {string} view Project view mode (list/card)
+ * @property {string} view Project view mode (list/board)
  */

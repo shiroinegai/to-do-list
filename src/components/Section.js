@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
  * @param {string} name
  * @returns {Section} Section object
  */
-const newSection = (projectId, name = "Untitled") => {
+const newSection = (projectId, name = "") => {
   const id = uuidv4();
   const tasks = [];
 

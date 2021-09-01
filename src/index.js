@@ -1,7 +1,7 @@
-import { main } from "./components/App";
-
 import "./styles/main.scss";
 
-console.log("To Do List is running.");
+import { main } from "./components/View";
 
 document.getElementById("root").append(main);
+
+console.log("To Do List is running.");
