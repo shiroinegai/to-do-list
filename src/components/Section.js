@@ -13,4 +13,20 @@ const newSection = (projectId, name = "Untitled") => {
   return { id, projectId, name, tasks };
 };
 
-export { newSection };
+const createSection = () => {
+  //TODO
+};
+
+const readSection = () => {
+  //TODO
+};
+
+const updateSection = () => {
+  //TODO
+};
+
+const deleteSection = () => {
+  //TODO
+};
+
+export { newSection, createSection, readSection, updateSection, deleteSection };

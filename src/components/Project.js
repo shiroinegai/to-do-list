@@ -17,4 +17,20 @@ const newProject = (name, color, image = "", isFavourite, view = "list") => {
   return { id, name, color, image, isFavourite, sections, view };
 };
 
-export { newProject };
+const createProject = () => {
+  //TODO
+};
+
+const readProject = () => {
+  //TODO
+};
+
+const updateProject = () => {
+  //TODO
+};
+
+const deleteProject = () => {
+  //TODO
+};
+
+export { newProject, createProject, readProject, updateProject, deleteProject };
