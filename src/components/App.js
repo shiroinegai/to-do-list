@@ -1,4 +1,4 @@
-const state = {};
+let state = {};
 const getState = () => state;
 const setState = (newState) => {
   state = { ...state, ...newState };

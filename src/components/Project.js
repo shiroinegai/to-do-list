@@ -21,7 +21,7 @@ let projects = [];
  */
 const newProject = (name, color, image = "", isFavourite, view = "list") => {
   const id = uuidv4();
-  const sections = [newSection()];
+  const sections = [newSection(id)];
 
   return { id, name, color, image, isFavourite, sections, view };
 };
