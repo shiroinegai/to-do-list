@@ -70,6 +70,15 @@ const deleteProject = (id) => {
 };
 
 /**
+ * @public
+ * @function fetchProjects
+ * @returns {Project[]}
+ */
+function fetchProjects() {
+  return projects;
+}
+
+/**
  * @private
  * @function findProjectById
  * @param {string} id
@@ -122,6 +131,7 @@ export {
   readProject,
   updateProject,
   deleteProject,
+  fetchProjects,
   resetProjects,
   useProjectsSample,
 };
