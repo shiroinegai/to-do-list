@@ -79,7 +79,7 @@ function fetchProjects() {
 }
 
 /**
- * @private
+ * @public
  * @function findProjectById
  * @param {string} id
  * @returns {Project}
@@ -132,6 +132,7 @@ export {
   updateProject,
   deleteProject,
   fetchProjects,
+  findProjectById,
   resetProjects,
   useProjectsSample,
 };
