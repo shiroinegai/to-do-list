@@ -12,5 +12,5 @@
  * @property {string[]} labels Array of labels for Task
  * @property {number} priority Task priority
  * @property {boolean} isComplete Indicate if Task is complete
- * @property {Task[]} subTasks Array of Task children
+ * @property {Task[]} tasks Array of Task children
  */

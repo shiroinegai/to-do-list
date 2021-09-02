@@ -28,7 +28,7 @@ const newTask = (
   const id = uuidv4();
   const endTime = null;
   const isComplete = false;
-  const subTasks = [];
+  const tasks = [];
 
   return {
     id,
@@ -42,7 +42,7 @@ const newTask = (
     labels,
     priority,
     isComplete,
-    subTasks,
+    tasks,
   };
 };
 
@@ -79,46 +79,10 @@ const createTask = (
     priority
   );
   const sections = fetchSections(projectId);
-  for (let i = 0; i < sections.length; i++) {
-    const section = sections[i];
-    if (section.id === parentId) {
-      section.tasks.push(task);
-      return;
-    }
-    if (section.tasks.length) {
-      for (let j = 0; j < section.tasks.length; j++) {
-        const taskItem = section.tasks[j];
-        if (taskItem.id === parentId) {
-          taskItem.subTasks.push(task);
-          return;
-        }
-        addTaskToSubTasks(taskItem.subTasks, parentId, task);
-      }
-    }
-  }
+  nestTask(sections, parentId, task);
 };
 
-/**
- * @private
- * @function addTaskToSubTasks
- * @param {Task[]} subTasksArray
- * @param {string} parentIdQuery
- * @param {Task} task
- */
-function addTaskToSubTasks(subTasksArray, parentIdQuery, task) {
-  if (subTasksArray.length) {
-    for (let i = 0; i < subTasksArray.length; i++) {
-      const subTask = subTasksArray[i];
-      if (subTask.id === parentIdQuery) {
-        subTask.subTasks.push(task);
-        return;
-      }
-      addTaskToSubTasks(subTask.subTasks, parentIdQuery, task);
-    }
-  }
-}
-
-const readTask = () => {
+const readTask = (projectIdQuery, parentIdQuery, taskIdQuery) => {
   //TODO
 };
 
@@ -129,5 +93,37 @@ const updateTask = () => {
 const deleteTask = () => {
   //TODO
 };
+
+/**
+ * @private
+ * @function nestTask
+ * @param {Section[]|Task[]} parentArray
+ * @param {string} parentIdQuery
+ * @param {Task} task
+ */
+function nestTask(parentArray, parentIdQuery, task) {
+  if (parentArray.length) {
+    for (let i = 0; i < parentArray.length; i++) {
+      const parent = parentArray[i];
+      if (parent.id === parentIdQuery) {
+        parent.tasks.push(task);
+        return;
+      }
+      nestTask(parent.tasks, parentIdQuery, task);
+    }
+  }
+}
+
+/**
+ * @private
+ * @function findTaskById
+ * @param {String} projectIdQuery
+ * @param {String} parentIdQuery
+ * @param {string} taskIdQuery
+ * @returns {Task}
+ */
+function findTaskById(projectIdQuery, parentIdQuery, taskIdQuery) {
+  //TODO
+}
 
 export { createTask, readTask, updateTask, deleteTask };
