@@ -82,8 +82,16 @@ const createTask = (
   nestTask(sections, parentId, task);
 };
 
-const readTask = (projectIdQuery, parentIdQuery, taskIdQuery) => {
-  //TODO
+/**
+ * @public
+ * @function readTask
+ * @param {string} projectIdQuery
+ * @param {string} taskIdQuery
+ * @returns {Task}
+ */
+const readTask = (projectIdQuery, taskIdQuery) => {
+  const sections = fetchSections(projectIdQuery);
+  return findTaskById(sections, taskIdQuery);
 };
 
 const updateTask = () => {
@@ -117,13 +125,23 @@ function nestTask(parentArray, parentIdQuery, task) {
 /**
  * @private
  * @function findTaskById
- * @param {String} projectIdQuery
- * @param {String} parentIdQuery
+ * @param {Section[]|Task[]} parentArray
  * @param {string} taskIdQuery
  * @returns {Task}
  */
-function findTaskById(projectIdQuery, parentIdQuery, taskIdQuery) {
-  //TODO
+function findTaskById(parentArray, taskIdQuery) {
+  if (parentArray.length) {
+    for (let i = 0; i < parentArray.length; i++) {
+      const parent = parentArray[i];
+      for (let j = 0; j < parent.tasks.length; j++) {
+        const task = parent.tasks[j];
+        if (task.id === taskIdQuery) {
+          return task;
+        }
+        findTaskById(parent.tasks, taskIdQuery);
+      }
+    }
+  }
 }
 
 export { createTask, readTask, updateTask, deleteTask };
