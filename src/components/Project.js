@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from "uuid";
-import { newSection } from "./Section";
 
 /**
  * Projects store
@@ -21,7 +20,7 @@ let projects = [];
  */
 const newProject = (name, color, image = "", isFavourite, view = "list") => {
   const id = uuidv4();
-  const sections = [newSection(id)];
+  const sections = [{ id: "default", projectId: id, name: "", tasks: [] }];
 
   return { id, name, color, image, isFavourite, sections, view };
 };
@@ -42,31 +41,31 @@ const createProject = (name, color, image, isFavourite, view) => {
 /**
  * @public
  * @function readProject
- * @param {string} id
+ * @param {string} projectIdQuery
  * @returns {Project}
  */
-const readProject = (id) => {
-  return findProjectById(id);
+const readProject = (projectIdQuery) => {
+  return findProjectById(projectIdQuery);
 };
 
 /**
  * @public
  * @function updateProject
- * @param {string} id
+ * @param {string} projectIdQuery
  * @param {Project} projectUpdates
  */
-const updateProject = (id, projectUpdates) => {
-  let project = findProjectById(id);
+const updateProject = (projectIdQuery, projectUpdates) => {
+  let project = findProjectById(projectIdQuery);
   project = { ...project, ...projectUpdates };
 };
 
 /**
  * @public
  * @function deleteProject
- * @param {string} id
+ * @param {string} projectIdQuery
  */
-const deleteProject = (id) => {
-  projects = projects.filter((project) => project.id === id);
+const deleteProject = (projectIdQuery) => {
+  projects = projects.filter((project) => project.id !== projectIdQuery);
 };
 
 /**
@@ -81,13 +80,13 @@ function fetchProjects() {
 /**
  * @public
  * @function findProjectById
- * @param {string} id
+ * @param {string} projectIdQuery
  * @returns {Project}
  */
-function findProjectById(id) {
+function findProjectById(projectIdQuery) {
   for (let i = 0; i < projects.length; i++) {
     const project = projects[i];
-    if (project.id === id) {
+    if (project.id === projectIdQuery) {
       return project;
     }
   }
@@ -103,9 +102,7 @@ const freshProjectInstance = {
   color: "none",
   image: "",
   isFavourite: false,
-  sections: [
-    { id: "inbox-top-section", projectId: "inbox", name: "", tasks: [] },
-  ],
+  sections: [{ id: "default", projectId: "inbox", name: "", tasks: [] }],
   view: "list",
 };
 
