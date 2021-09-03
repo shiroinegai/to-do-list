@@ -94,12 +94,29 @@ const readTask = (projectIdQuery, taskIdQuery) => {
   return findTaskById(sections, taskIdQuery);
 };
 
-const updateTask = () => {
-  //TODO
+/**
+ * @public
+ * @function updateTask
+ * @param {string} projectIdQuery
+ * @param {string} taskIdQuery
+ * @param {Task} taskUpdates
+ */
+const updateTask = (projectIdQuery, taskIdQuery, taskUpdates) => {
+  const sections = fetchSections(projectIdQuery);
+  let task = findTaskById(sections, taskIdQuery);
+  task = { ...task, ...taskUpdates };
 };
 
-const deleteTask = () => {
-  //TODO
+/**
+ * @public
+ * @function deleteTask
+ * @param {string} projectIdQuery
+ * @param {string} parentIdQuery
+ * @param {string} taskIdQuery
+ */
+const deleteTask = (projectIdQuery, parentIdQuery, taskIdQuery) => {
+  const sections = fetchSections(projectIdQuery);
+  removeNestedTask(sections, parentIdQuery, taskIdQuery);
 };
 
 /**
@@ -118,6 +135,25 @@ function nestTask(parentArray, parentIdQuery, task) {
         return;
       }
       nestTask(parent.tasks, parentIdQuery, task);
+    }
+  }
+}
+
+/**
+ * @private
+ * @function removeNestedTask
+ * @param {Section[]|Task[]} parentArray
+ * @param {string} parentIdQuery
+ * @param {string} taskIdQuery
+ */
+function removeNestedTask(parentArray, parentIdQuery, taskIdQuery) {
+  if (parentArray.length) {
+    for (let i = 0; i < parentArray.length; i++) {
+      const parent = parentArray[i];
+      if (parent.id === parentIdQuery) {
+        parent.tasks = parent.tasks.filter((task) => task.id !== taskIdQuery);
+      }
+      removeNestedTask(parent.tasks, parentIdQuery, taskIdQuery);
     }
   }
 }
