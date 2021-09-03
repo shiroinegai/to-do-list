@@ -1,0 +1,151 @@
+{
+  "projects": [
+    {
+      "id": "inbox",
+      "name": "Inbox",
+      "color": "none",
+      "image": "",
+      "isFavourite": false,
+      "sections": [
+        {
+          "id": "default",
+          "projectId": "inbox",
+          "name": "",
+          "tasks": []
+        }
+      ],
+      "view": "list"
+    },
+    {
+      "id": "welcome",
+      "name": "Welcome 👋",
+      "color": "4c4c4c",
+      "image": "",
+      "isFavourite": false,
+      "sections": [
+        {
+          "id": "welcome-s0",
+          "projectId": "welcome",
+          "name": "",
+          "tasks": []
+        },
+        {
+          "id": "welcome-s1",
+          "projectId": "welcome",
+          "name": "Let's get started with a few tips",
+          "tasks": [
+            {
+              "id": "welcome-t0",
+              "parentId": "welcome-s1",
+              "projectId": "welcome",
+              "header": "Select this task to see more details 🔎",
+              "description": "Quick notes can go here 👇",
+              "startTime": null,
+              "endTime": null,
+              "dueDate": null,
+              "labels": [],
+              "priority": null,
+              "isComplete": false,
+              "tasks": [
+                {
+                  "id": "welcome-t0-t0",
+                  "parentId": "welcome-t0",
+                  "projectId": "welcome",
+                  "header": "Add sub-tasks here!",
+                  "description": "",
+                  "startTime": null,
+                  "endTime": null,
+                  "dueDate": null,
+                  "labels": [],
+                  "priority": null,
+                  "isComplete": false,
+                  "tasks": []
+                }
+              ]
+            },
+            {
+              "id": "welcome-t1",
+              "parentId": "welcome-s1",
+              "projectId": "welcome",
+              "header": "Schedule this task 📅",
+              "description": "Use the Schedule button",
+              "startTime": null,
+              "endTime": null,
+              "dueDate": null,
+              "labels": [],
+              "priority": null,
+              "isComplete": false,
+              "tasks": []
+            },
+            {
+              "id": "welcome-t2",
+              "parentId": "welcome-s1",
+              "projectId": "welcome",
+              "header": "Organise tasks into a new section 🗂️",
+              "description": "Use the New Section button at the top of this project",
+              "startTime": null,
+              "endTime": null,
+              "dueDate": null,
+              "labels": [],
+              "priority": null,
+              "isComplete": false,
+              "tasks": []
+            },
+            {
+              "id": "welcome-t3",
+              "parentId": "welcome-s1",
+              "projectId": "welcome",
+              "header": "Start your own project! 🚀",
+              "description": "Hit + next to Projects in the navigation menu",
+              "startTime": null,
+              "endTime": null,
+              "dueDate": null,
+              "labels": [],
+              "priority": null,
+              "isComplete": false,
+              "tasks": []
+            }
+          ]
+        }
+      ],
+      "view": "list"
+    },
+    {
+      "id": "about",
+      "name": "About this App 💖",
+      "color": "4c4c4c",
+      "image": "",
+      "isFavourite": true,
+      "sections": [
+        {
+          "id": "about-s0",
+          "projectId": "about",
+          "name": "",
+          "tasks": [
+            {
+              "id": "about-t0",
+              "parentId": "about-s0",
+              "projectId": "about",
+              "header": "Created by Shiroi Negai",
+              "description": "",
+              "startTime": null,
+              "endTime": null,
+              "dueDate": null,
+              "labels": [],
+              "priority": null,
+              "isComplete": false,
+              "tasks": []
+            }
+          ]
+        },
+        {
+          "id": "about-s1",
+          "projectId": "about",
+          "name": "TODO",
+          "tasks": []
+        }
+      ],
+      "view": "list"
+    }
+  ]
+}

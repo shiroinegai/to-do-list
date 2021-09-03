@@ -1,5 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 
+import Welcome from "../assets/placeholders/welcome.json";
+
 /**
  * Projects store
  * @private
@@ -20,7 +22,8 @@ let projects = [];
  */
 const newProject = (name, color, image = "", isFavourite, view = "list") => {
   const id = uuidv4();
-  const sections = [{ id: "default", projectId: id, name: "", tasks: [] }];
+  const sectionId = uuidv4();
+  const sections = [{ id: sectionId, projectId: id, name: "", tasks: [] }];
 
   return { id, name, color, image, isFavourite, sections, view };
 };
@@ -120,7 +123,8 @@ const resetProjects = () => {
  * @function useProjectsSample
  */
 const useProjectsSample = () => {
-  //TODO
+  projects.length = 0;
+  projects = projects.concat(Welcome.projects);
 };
 
 export {
