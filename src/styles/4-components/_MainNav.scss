@@ -1,0 +1,22 @@
+/* =============================================================================
+ # TOP NAV
+============================================================================= */
+
+.c-MainNav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 1em;
+  justify-content: space-around;
+  border-top: 0.0625rem solid var(--color-primary);
+}
+
+.c-MainNav__button {
+  padding: 0.5em;
+  flex-grow: 1;
+
+  svg {
+    margin: 0 auto;
+    width: 1.5rem;
+  }
+}

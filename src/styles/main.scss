@@ -4,5 +4,9 @@
 @use "./1-generic/normalize";
 @use "./1-generic/resets";
 
+@use "./2-base/button";
+@use "./2-base/nav";
 @use "./2-base/page";
 @use "./2-base/text";
+
+@use "./4-components/MainNav.scss";

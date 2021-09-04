@@ -1,10 +1,15 @@
 /* =============================================================================
- # COLORS
+ # BUTTON
 ============================================================================= */
 
-@use '../tools' as *;
+button {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  line-height: 1;
 
-:root {
-  @include defineColorHSL(--color-primary, 0, 0%, 5%);
-  @include defineColorHSL(--color-secondary, 0, 0%, 100%);
+  * {
+    display: block;
+  }
 }

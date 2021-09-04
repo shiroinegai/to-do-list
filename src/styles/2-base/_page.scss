@@ -3,8 +3,8 @@
 ============================================================================= */
 
 :root {
+  background: var(--color-secondary);
   font-family: var(--font-primary);
-  font-size: clamp(10px, calc(10px + 1.75vw), 50px);
+  font-size: clamp(16px, calc(10px + 1.5vw), 32px);
   min-height: 100%;
-  overflow-y: scroll;
 }

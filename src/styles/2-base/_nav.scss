@@ -1,10 +1,7 @@
 /* =============================================================================
- # COLORS
+ # NAV
 ============================================================================= */
 
-@use '../tools' as *;
-
-:root {
-  @include defineColorHSL(--color-primary, 0, 0%, 5%);
-  @include defineColorHSL(--color-secondary, 0, 0%, 100%);
+nav {
+  display: flex;
 }
