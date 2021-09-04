@@ -1,0 +1,14 @@
+/* =============================================================================
+ # HIDE SCROLLBAR ON Y-AXIS
+============================================================================= */
+
+@mixin hideScrollbarY {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

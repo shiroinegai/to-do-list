@@ -5,6 +5,6 @@ import Menu from "./components/interface/Menu";
 import Main from "./components/interface/Main";
 
 const root = document.getElementById("root");
-root.append(MainNav, Menu, Main);
+root.append(Main, Menu, MainNav);
 
 console.log("To Do List is running.");

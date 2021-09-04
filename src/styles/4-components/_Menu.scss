@@ -1,0 +1,27 @@
+/* =============================================================================
+ # MENU
+============================================================================= */
+
+@use '../tools' as *;
+
+.c-Menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: -75vw;
+  height: calc(100% - 2.5625rem);
+  width: 75vw;
+  padding: 1.5rem 1rem 1.5rem 2rem;
+  border-right: 0.0625rem solid var(--color-primary);
+  overflow-y: scroll;
+  @include hideScrollbarY;
+
+  &__sections {
+    flex-direction: column;
+  }
+
+  &--is-open {
+    transform: translateX(75vw);
+  }
+}

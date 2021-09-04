@@ -4,6 +4,7 @@ const MainNav = document.createElement("nav");
 MainNav.classList.add("c-MainNav");
 
 const menu = document.createElement("button");
+menu.addEventListener("click", toggleMenu);
 menu.classList.add("c-MainNav__button");
 menu.append(menuIcon);
 
@@ -20,5 +21,11 @@ userProfile.classList.add("c-MainNav__button");
 userProfile.append(userProfileIcon);
 
 MainNav.append(menu, home, quickTask, userProfile);
+
+function toggleMenu() {
+  document
+    .querySelector("js-Menu--toggleMenu")
+    .classList.toggle("c-Menu--is-open");
+}
 
 export default MainNav;
