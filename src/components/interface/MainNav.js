@@ -24,7 +24,7 @@ MainNav.append(menu, home, quickTask, userProfile);
 
 function toggleMenu() {
   document
-    .querySelector("js-Menu--toggleMenu")
+    .querySelector(".js-Menu--toggleMenu")
     .classList.toggle("c-Menu--is-open");
 }
 
