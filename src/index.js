@@ -1,7 +1,10 @@
 import "./styles/main.scss";
 
-import { main } from "./components/View";
+import TopNav from "./components/interface/TopNav";
+import Menu from "./components/interface/Menu";
+import Main from "./components/interface/Main";
 
-document.getElementById("root").append(main);
+const root = document.getElementById("root");
+root.append(TopNav, Menu, Main);
 
 console.log("To Do List is running.");
