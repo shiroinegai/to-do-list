@@ -1,4 +1,4 @@
-import { fetchProjects, useProjectsSample } from "../Project";
+import { fetchProjects } from "../Project";
 import { inboxIcon, chevronIcon, hashtagIcon } from "./Icons";
 
 const Menu = document.createElement("aside");
@@ -6,7 +6,6 @@ Menu.classList.add("c-Menu", "js-Menu--toggleMenu");
 const MenuSections = document.createElement("nav");
 MenuSections.classList.add("c-Menu__sections");
 
-useProjectsSample();
 let projects = fetchProjects();
 
 const inboxLink = document.createElement("a");

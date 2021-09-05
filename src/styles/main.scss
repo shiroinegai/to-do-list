@@ -1,4 +1,4 @@
-@use './0-settings/colors';
+@use "./0-settings/colors";
 @use "./0-settings/fonts";
 
 @use "./1-generic/normalize";
@@ -14,6 +14,7 @@
 @use "./3-objects/nav-link";
 
 @use "./4-components/MainNav";
+@use "./4-components/MainView";
 @use "./4-components/Menu";
 
 @use "./6-trumps/hide";

@@ -11,14 +11,16 @@
   top: 0;
   left: -75vw;
   height: calc(100% - 2.5625rem);
-  width: 75vw;
-  padding: 1.5rem 1rem 1.5rem 2rem;
-  border-right: 0.0625rem solid var(--color-primary);
   overflow-y: scroll;
   transition: transform ease-in-out 0.2s;
   @include hideScrollbarY;
 
   &__sections {
+    background: var(--color-secondary);
+    height: 100%;
+    width: 75vw;
+    border-right: 0.0625rem solid var(--color-primary);
+    padding: 1.5rem 1rem 1.5rem 2rem;
     flex-direction: column;
   }
 

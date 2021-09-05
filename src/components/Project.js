@@ -8,6 +8,7 @@ import Welcome from "../assets/placeholders/welcome.json";
  * @type {Project[]}
  */
 let projects = [];
+useProjectsSample();
 
 /**
  * Project factory function
@@ -113,19 +114,19 @@ const freshProjectInstance = {
  * @public
  * @function resetProjects
  */
-const resetProjects = () => {
+function resetProjects() {
   projects.length = 0;
   projects.push(freshProjectInstance);
-};
+}
 
 /**
  * @public
  * @function useProjectsSample
  */
-const useProjectsSample = () => {
+function useProjectsSample() {
   projects.length = 0;
   projects = projects.concat(Welcome.projects);
-};
+}
 
 export {
   createProject,
