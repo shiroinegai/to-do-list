@@ -1,5 +1,5 @@
 import { fetchProjects, useProjectsSample } from "../Project";
-import { inboxIcon, chevronIcon } from "./Icons";
+import { inboxIcon, chevronIcon, hashtagIcon } from "./Icons";
 
 const Menu = document.createElement("aside");
 Menu.classList.add("c-Menu", "js-Menu--toggleMenu");
@@ -9,35 +9,50 @@ MenuSections.classList.add("c-Menu__sections");
 useProjectsSample();
 let projects = fetchProjects();
 
-const inbox = document.createElement("a");
-inbox.append("Inbox");
-MenuSections.append(inbox);
+const inboxLink = document.createElement("a");
+const inboxHeader = createNavLink("h1", inboxIcon(), "Inbox");
+inboxLink.append(inboxHeader);
+MenuSections.append(inboxLink);
 
-const favourites = document.createElement("section");
-favourites.append("Favourites");
-MenuSections.append(favourites);
-
-const projectsHeader = document.createElement("section");
-projectsHeader.append("Projects");
-MenuSections.append(projectsHeader);
+const favouritesHeader = createNavLink("button", chevronIcon(), "Favourites");
+favouritesHeader.classList.add("c-Menu__section-header");
+const favouritesContent = document.createElement("section");
+favouritesContent.classList.add("c-Menu__section-content");
 
 for (let i = 1; i < projects.length; i++) {
   const project = projects[i];
-  const menuItem = createMenuItem(project);
   if (project.isFavourite) {
-    favourites.append(menuItem);
-  } else {
-    projectsHeader.append(menuItem);
+    const navLink = createNavLink("a", hashtagIcon(), project.name);
+    favouritesContent.append(navLink);
   }
 }
 
+MenuSections.append(favouritesHeader);
+MenuSections.append(favouritesContent);
+
+const projectsHeader = createNavLink("button", chevronIcon(), "Projects");
+projectsHeader.classList.add("c-Menu__section-header");
+const projectsContent = document.createElement("section");
+projectsContent.classList.add("c-Menu__section-content");
+
+for (let i = 1; i < projects.length; i++) {
+  const project = projects[i];
+  const navLink = createNavLink("a", hashtagIcon(), project.name);
+  projectsContent.append(navLink);
+}
+
+MenuSections.append(projectsHeader);
+MenuSections.append(projectsContent);
+
 Menu.append(MenuSections);
 
-function createMenuItem(project) {
-  const menuItem = document.createElement("a");
-  menuItem.append(project.name);
+function createNavLink(element, icon, text) {
+  const navLink = document.createElement(element);
+  navLink.classList.add("o-nav-link");
+  navLink.append(icon);
+  navLink.append(text);
 
-  return menuItem;
+  return navLink;
 }
 
 export default Menu;
