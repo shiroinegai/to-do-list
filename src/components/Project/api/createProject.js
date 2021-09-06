@@ -11,8 +11,7 @@ import { v4 as uuidv4 } from "uuid";
  */
 const createProject = ({ name, color = "", isFavourite = false }) => {
   const id = uuidv4();
-  const sectionId = uuidv4();
-  const sections = [{ id: sectionId, projectId: id, name: "", tasks: [] }];
+  const sections = [{ id: uuidv4(), projectId: id, name: "", tasks: [] }];
 
   return { id, name, color, isFavourite, sections };
 };

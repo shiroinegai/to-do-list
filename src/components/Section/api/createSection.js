@@ -7,9 +7,12 @@ import { v4 as uuidv4 } from "uuid";
  * @returns {Section}
  */
 const createSection = (name) => {
-  const id = uuidv4();
-
-  return { id, projectId: getActiveProjectId(), name, tasks: [] };
+  return {
+    id: uuidv4(),
+    projectId: getActiveProjectId(),
+    name,
+    tasks: [],
+  };
 };
 
 export default createSection;
