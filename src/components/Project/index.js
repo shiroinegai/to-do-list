@@ -12,7 +12,7 @@ let projects = [...placeholder.projects];
 const getProjects = () => projects;
 
 /**
- *
+ * @function setProject
  * @param {number} index
  * @param {Object} projectUpdates
  * @param {string} [projectUpdates.name]

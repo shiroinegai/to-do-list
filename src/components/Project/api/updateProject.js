@@ -8,6 +8,7 @@ import { getProjectIndexById } from ".";
  * @param {string} [projectUpdates.name]
  * @param {string} [projectUpdates.color]
  * @param {boolean} [projectUpdates.isFavourite]
+ * @param {Section[]} [projectUpdates.sections]
  */
 const updateProject = (projectIdQuery, projectUpdates) => {
   const projectIndex = getProjectIndexById(projectIdQuery);
