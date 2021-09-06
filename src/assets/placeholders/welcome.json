@@ -4,7 +4,6 @@
       "id": "inbox",
       "name": "Inbox",
       "color": "none",
-      "image": "",
       "isFavourite": false,
       "sections": [
         {
@@ -13,14 +12,12 @@
           "name": "",
           "tasks": []
         }
-      ],
-      "view": "list"
+      ]
     },
     {
       "id": "welcome",
       "name": "Welcome 👋",
       "color": "4c4c4c",
-      "image": "",
       "isFavourite": false,
       "sections": [
         {
@@ -107,14 +104,12 @@
             }
           ]
         }
-      ],
-      "view": "list"
+      ]
     },
     {
       "id": "about",
       "name": "About this App 💖",
       "color": "4c4c4c",
-      "image": "",
       "isFavourite": true,
       "sections": [
         {
@@ -144,8 +139,7 @@
           "name": "TODO",
           "tasks": []
         }
-      ],
-      "view": "list"
+      ]
     }
   ]
 }

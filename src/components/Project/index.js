@@ -1,5 +1,3 @@
-import createProject from "./functions/createProject";
-
 import placeholder from "../../assets/placeholders/welcome.json";
 
 /**
@@ -8,31 +6,21 @@ import placeholder from "../../assets/placeholders/welcome.json";
 let projects = [...placeholder.projects];
 
 /**
- * @function addProject
- * @param {Project} project
- */
-const addProject = (project) => {
-  projects.push(project);
-};
-
-/**
- * @function fetchAllProjects
+ * @function getProjects
  * @returns {Project[]}
  */
-const fetchAllProjects = () => projects;
+const getProjects = () => projects;
 
 /**
- * @function fetchProjectById
- * @param {string} projectIdQuery
- * @returns
+ *
+ * @param {number} index
+ * @param {Object} projectUpdates
+ * @param {string} [projectUpdates.name]
+ * @param {string} [projectUpdates.color]
+ * @param {boolean} [projectUpdates.isFavourite]
  */
-const fetchProjectById = (projectIdQuery) => {
-  for (let i = 0; i < projects.length; i++) {
-    const project = projects[i];
-    if (project.id === projectIdQuery) {
-      return project;
-    }
-  }
+const setProject = (index, projectUpdates) => {
+  projects[index] = { ...projects[index], ...projectUpdates };
 };
 
-export { createProject, addProject, fetchAllProjects, fetchProjectById };
+export { getProjects, setProject };
