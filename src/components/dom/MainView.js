@@ -1,4 +1,4 @@
-import { findProjectById } from "../Project";
+import { findProjectById } from "../old";
 
 const Main = document.createElement("main");
 Main.classList.add("c-MainView");

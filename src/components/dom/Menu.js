@@ -1,4 +1,4 @@
-import { fetchProjects } from "../Project";
+import { fetchProjects } from "../old";
 import { inboxIcon, chevronIcon, hashtagIcon } from "./Icons";
 
 const Menu = document.createElement("aside");

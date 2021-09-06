@@ -1,7 +1,4 @@
-let state = {};
-const getState = () => state;
-const setState = (newState) => {
-  state = { ...state, ...newState };
-};
+// Stores all application state
+// All projects to be published to App
 
-export { getState, setState };
+let state = {};
