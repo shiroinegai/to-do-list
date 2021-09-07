@@ -1,13 +1,13 @@
 import addSection from "./addSection";
 import createSection from "./createSection";
-import deleteSection from "./deleteSection";
-import updateSection from "./updateSection";
 import fetchAllSections from "./fetchAllSections";
+import updateSection from "./updateSection";
+import deleteSection from "./deleteSection";
 
 export {
   addSection,
   createSection,
-  deleteSection,
-  updateSection,
   fetchAllSections,
+  updateSection,
+  deleteSection,
 };

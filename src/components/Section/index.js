@@ -1,4 +1,4 @@
-import { getProjects } from "../Project/index";
+import { getProjects } from "../Project";
 
 let sectionIndex = [];
 

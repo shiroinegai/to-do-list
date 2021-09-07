@@ -1,3 +1,9 @@
+/**
+ * @function deleteNestedTask
+ * @param {Section[]|Task[]} parentArray
+ * @param {string} parentIdQuery
+ * @param {string} taskIdQuery
+ */
 const deleteNestedTask = (parentArray, parentIdQuery, taskIdQuery) => {
   if (parentArray.length) {
     for (let i = 0; i < parentArray.length; i++) {

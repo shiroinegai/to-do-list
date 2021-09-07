@@ -1,16 +1,18 @@
 import { indexSections } from "./components/Section";
 import { fetchAllSections } from "./components/Section/api";
-import { createTask, addTask } from "./components/Task/api";
+import { getTaskIndex, indexTasks } from "./components/Task";
+import { updateTask } from "./components/Task/api";
+import fetchAllTasks from "./components/Task/api/fetchAllTasks";
 import "./styles/main.scss";
 
 console.log("To Do List is running.");
 
 indexSections();
 
-console.table(fetchAllSections()[0].tasks);
+updateTask("welcome-t0-t0", { header: "UPDATED HEADER" });
 
-const test = createTask({ header: "TEST NEW HEADER" });
+console.log(fetchAllSections());
 
-addTask(test);
+indexTasks();
 
-console.table(fetchAllSections()[0].tasks);
+console.log(fetchAllTasks());
