@@ -1,33 +1,33 @@
-import { findProjectById } from "../old";
+import { fetchProjectById } from "../Project/api";
 
-const Main = document.createElement("main");
-Main.classList.add("c-MainView");
+const MainView = document.createElement("main");
+MainView.classList.add("c-MainView");
 
 // 1 Get Project ID
-let project = findProjectById("welcome");
+let project = fetchProjectById("welcome");
 
 // 2 Render Project Name
 const projectHeader = createProjectHeader(project.name);
-Main.append(projectHeader);
+MainView.append(projectHeader);
 
 // 3 Render top level section
 if (project.sections[0].tasks.length) {
   //TODO: Populate top level tasks
 } else {
-  Main.append(createAddTaskButton());
+  MainView.append(createAddTaskButton());
 }
 
 // 4 Render named section
 for (let i = 1; i < project.sections.length; i++) {
   const section = project.sections[i];
-  Main.append(createSectionHeader(section.name));
+  MainView.append(createSectionHeader(section.name));
   // 5 Populate with tasks
   for (let j = 0; j < section.tasks.length; j++) {
     const task = section.tasks[j];
-    Main.append(task.header, task.description);
+    MainView.append(task.header, task.description);
     for (let k = 0; k < task.tasks.length; k++) {
       const subTask = task.tasks[k];
-      Main.append(subTask.header, subTask.description);
+      MainView.append(subTask.header, subTask.description);
     }
   }
 }
@@ -56,4 +56,4 @@ function createSectionHeader(name) {
   return sectionHeader;
 }
 
-export default Main;
+export default MainView;

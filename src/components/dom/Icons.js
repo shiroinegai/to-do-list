@@ -71,6 +71,10 @@ const hashtagIcon = () =>
   makeSolidIcon(
     "M9.243 3.03a1 1 0 01.727 1.213L9.53 6h2.94l.56-2.243a1 1 0 111.94.486L14.53 6H17a1 1 0 110 2h-2.97l-1 4H15a1 1 0 110 2h-2.47l-.56 2.242a1 1 0 11-1.94-.485L10.47 14H7.53l-.56 2.242a1 1 0 11-1.94-.485L5.47 14H3a1 1 0 110-2h2.97l1-4H5a1 1 0 110-2h2.47l.56-2.243a1 1 0 011.213-.727zM9.03 8l-1 4h2.938l1-4H9.031z"
   );
+const checkIcon = () =>
+  makeSolidIcon(
+    "M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+  );
 
 export {
   menuIcon,
@@ -81,4 +85,5 @@ export {
   inboxIcon,
   chevronIcon,
   hashtagIcon,
+  checkIcon,
 };
