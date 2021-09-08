@@ -3,6 +3,20 @@
 ============================================================================= */
 
 .o-collapsible {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  &__toggler {
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+
+    svg:first-child {
+      transition: transform ease-in-out 0.2s;
+    }
+  }
+
   &__content {
     max-height: 0;
     overflow: hidden;
