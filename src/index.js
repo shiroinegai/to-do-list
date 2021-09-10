@@ -1,7 +1,7 @@
 import "./styles/main.scss";
-import View from "./components/DOM/View";
-import MainNav from "./components/DOM/MainNav";
-import Menu from "./components/DOM/Menu";
+import View from "./components/DOMElements/View";
+import MainNav from "./components/DOMElements/MainNav";
+import Menu from "./components/DOMElements/Menu";
 
 console.log("To Do List is running.");
 
