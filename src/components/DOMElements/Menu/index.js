@@ -2,9 +2,10 @@ import { fetchAllProjects } from "../../Project/api";
 import { hashtagIcon, inboxIcon } from "../Icons";
 import modal from "../common/modal";
 import menuLink from "./menuLink";
+import menuSection from "./menuSection";
 import menuSectionHeader from "./menuSectionHeader";
 import menuSectionContent from "./menuSectionContent";
-import collapsible from "../common/collapsible";
+import makeCollapsible from "../common/makeCollapsible";
 
 let projects = fetchAllProjects();
 
@@ -19,6 +20,7 @@ modal(Menu, menuContent);
 const inboxLink = menuLink(inboxIcon(), "h1", "Inbox");
 menuContent.append(inboxLink);
 
+const favouritesSection = menuSection();
 const favouritesHeader = menuSectionHeader("Favourites");
 const favouritesContent = menuSectionContent();
 for (let i = 1; i < projects.length; i++) {
@@ -28,8 +30,10 @@ for (let i = 1; i < projects.length; i++) {
     favouritesContent.append(menuLinkNode);
   }
 }
-const favouritesSection = collapsible(favouritesHeader, favouritesContent);
+makeCollapsible(favouritesSection, favouritesHeader, favouritesContent);
+favouritesSection.append(favouritesHeader, favouritesContent);
 
+const projectsSection = menuSection();
 const projectsHeader = menuSectionHeader("Projects");
 const projectsContent = menuSectionContent();
 for (let i = 1; i < projects.length; i++) {
@@ -37,7 +41,8 @@ for (let i = 1; i < projects.length; i++) {
   const menuLinkNode = menuLink(hashtagIcon(), "a", project.name);
   projectsContent.append(menuLinkNode);
 }
-const projectsSection = collapsible(projectsHeader, projectsContent);
+makeCollapsible(projectsSection, projectsHeader, projectsContent);
+projectsSection.append(projectsHeader, projectsContent);
 
 menuContent.append(favouritesSection, projectsSection);
 

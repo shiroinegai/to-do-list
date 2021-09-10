@@ -26,6 +26,12 @@
     }
   }
 
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
   &__header,
   &__link {
     display: flex;
@@ -51,11 +57,5 @@
 
   &__link-text {
     font-weight: 400;
-  }
-
-  &__section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
   }
 }

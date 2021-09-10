@@ -16,7 +16,7 @@ const toggleCollapsibleContent = (target) => {
   }
 
   // @ts-ignore
-  const collapsibleContent = target.nextSibling;
+  const collapsibleContent = target.parentNode.lastChild;
 
   if (collapsibleContent.style.maxHeight) {
     collapsibleContent.style.maxHeight = null;
