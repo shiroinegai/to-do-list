@@ -1,21 +1,9 @@
 /* =============================================================================
- # MAIN VIEW
+ # VIEW
 ============================================================================= */
 
-.c-MainView {
+.c-View {
   display: flex;
   flex-direction: column;
   padding: 1.5rem 2rem;
-
-  &__project-header {
-    font-size: 1.5rem;
-  }
-
-  &__section-header {
-    font-size: 1rem;
-  }
-
-  &__add-task-button {
-    text-align: start;
-  }
 }
