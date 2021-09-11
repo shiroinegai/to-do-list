@@ -1,11 +1,13 @@
+import { chevronIcon } from "../Icons";
 import addTaskButtonNode from "./addTaskButtonNode";
 import createTaskNode from "./createTaskNode";
+import listItem from "../common/listItem";
 
 const createSectionNode = (section) => {
   const sectionContainer = document.createElement("section");
   if (section.name) {
-    const sectionHeader = document.createElement("h2");
-    sectionHeader.append(section.name);
+    const sectionHeader = listItem("h2", section.name);
+    sectionHeader.prepend(chevronIcon());
     sectionContainer.append(sectionHeader);
   }
   const sectionContent = document.createElement("div");

@@ -1,6 +1,5 @@
 import { fetchAllProjects } from "../../Project/api";
 import { hashtagIcon, inboxIcon } from "../Icons";
-import modal from "../common/modal";
 import menuLink from "./menuLink";
 import menuSection from "./menuSection";
 import menuSectionHeader from "./menuSectionHeader";
@@ -14,8 +13,6 @@ Menu.classList.add("c-Menu", "js-Menu--toggleMenu");
 
 const menuContent = document.createElement("nav");
 menuContent.classList.add("c-Menu__content");
-
-modal(Menu, menuContent);
 
 const inboxLink = menuLink(inboxIcon(), "h1", "Inbox");
 menuContent.append(inboxLink);
@@ -45,5 +42,7 @@ makeCollapsible(projectsSection, projectsHeader, projectsContent);
 projectsSection.append(projectsHeader, projectsContent);
 
 menuContent.append(favouritesSection, projectsSection);
+
+Menu.append(menuContent);
 
 export default Menu;

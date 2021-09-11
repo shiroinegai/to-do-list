@@ -35,9 +35,6 @@ function toggleMenu() {
   document
     .querySelector(".js-Menu--toggleMenu")
     .classList.toggle("c-Menu--is-open");
-  document
-    .querySelector(".js-Menu--toggleMenu")
-    .classList.toggle("o-modal--is-open");
   const menuButtonSVGs = document.querySelectorAll(
     ".c-MainNav__button:first-child svg"
   );

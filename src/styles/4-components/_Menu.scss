@@ -6,6 +6,10 @@
 
 .c-Menu {
   height: calc(100% - 2.5625rem);
+  position: fixed;
+  top: 0;
+  transform: translateX(-75vw);
+  transition: transform ease-in-out 0.2s;
 
   &__content {
     background: var(--color-secondary);
@@ -13,17 +17,13 @@
     flex-direction: column;
     gap: 0.75rem;
     height: 100%;
-    width: 75vw;
     padding: 1.5rem 1rem 1.5rem 2rem;
-    transform: translateX(-75vw);
-    transition: transform ease-in-out 0.2s;
+    width: 75vw;
     @include hideScrollbarY;
   }
 
   &--is-open {
-    .c-Menu__content {
-      transform: translateX(0);
-    }
+    transform: translateX(0);
   }
 
   &__section {
