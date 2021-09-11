@@ -6,9 +6,11 @@ const createTaskNode = (task) => {
   //TODO
   const taskItem = document.createElement("div");
   if (task.tasks.length > 0) {
-    taskItem.append(chevronIcon());
+    taskItem.append(chevronIcon(), task.header);
     const subTasksNode = document.createElement("div");
     taskContainer.append(subTasksNode);
+  } else {
+    taskItem.append(task.header);
   }
 
   taskContainer.append(taskItem);
