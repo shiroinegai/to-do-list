@@ -3,9 +3,25 @@
 ============================================================================= */
 
 .c-View {
-  display: flex;
-  flex-direction: column;
   padding: 1.5rem 2rem;
+
+  &__project {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    &-header {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__addTaskButton {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+  }
 
   &__section {
     &-header {

@@ -2,8 +2,10 @@ import createSectionNode from "./createSectionNode";
 
 const createProjectNode = (project) => {
   const projectContainer = document.createElement("div");
+  projectContainer.classList.add("c-View__project");
 
   const projectHeader = document.createElement("h1");
+  projectHeader.classList.add("c-View__project-header");
   projectHeader.append(project.name);
 
   projectContainer.append(projectHeader);
