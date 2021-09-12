@@ -9,6 +9,7 @@ const createSectionNode = (section) => {
   sectionContainer.classList.add("c-View__section");
 
   const sectionContent = document.createElement("ul");
+  sectionContent.classList.add("c-View__section-content");
   for (let i = 0; i < section.tasks.length; i++) {
     const task = section.tasks[i];
     sectionContent.append(createTaskNode(task));
