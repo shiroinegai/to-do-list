@@ -15,6 +15,8 @@ const makeCollapsible = (parentNode, togglerNode, contentNode) => {
   });
 
   contentNode.classList.add("o-collapsible__content");
+
+  contentNode.style.maxHeight = "100%";
 };
 
 export default makeCollapsible;

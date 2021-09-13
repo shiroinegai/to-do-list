@@ -11,7 +11,7 @@ const toggleCollapsibleContent = (target) => {
     if (chevron.style.transform) {
       chevron.style.transform = null;
     } else {
-      chevron.style.transform = "rotate(90deg)";
+      chevron.style.transform = "rotate(-90deg)";
     }
   }
 
@@ -21,7 +21,7 @@ const toggleCollapsibleContent = (target) => {
   if (collapsibleContent.style.maxHeight) {
     collapsibleContent.style.maxHeight = null;
   } else {
-    collapsibleContent.style.maxHeight = `${collapsibleContent.scrollHeight}px`;
+    collapsibleContent.style.maxHeight = `100%`;
   }
 };
 
