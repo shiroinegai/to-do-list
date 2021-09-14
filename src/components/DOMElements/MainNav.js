@@ -5,6 +5,7 @@ import {
   quickTaskIcon,
   userProfileIcon,
 } from "./Icons";
+import toggleMenu from "./Menu/toggleMenu";
 
 const MainNav = document.createElement("nav");
 MainNav.classList.add("c-MainNav");
@@ -30,15 +31,5 @@ userProfile.classList.add("c-MainNav__button");
 userProfile.append(userProfileIcon());
 
 MainNav.append(menu, home, quickTask, userProfile);
-
-function toggleMenu() {
-  document
-    .querySelector(".js-Menu--toggleMenu")
-    .classList.toggle("c-Menu--is-open");
-  const menuButtonSVGs = document.querySelectorAll(
-    ".c-MainNav__button:first-child svg"
-  );
-  menuButtonSVGs.forEach((svg) => svg.classList.toggle("u--hide"));
-}
 
 export default MainNav;

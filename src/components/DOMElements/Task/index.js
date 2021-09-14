@@ -4,6 +4,7 @@ import { checkIcon } from "../Icons";
 
 const taskNode = (task) => {
   const taskItem = document.createElement("li");
+  taskItem.setAttribute("data-uuid", task.id);
   taskItem.classList.add("c-Task");
 
   const taskContainer = document.createElement("div");

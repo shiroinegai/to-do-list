@@ -5,6 +5,7 @@ import menuSection from "./menuSection";
 import menuSectionHeader from "./menuSectionHeader";
 import menuSectionContent from "./menuSectionContent";
 import makeCollapsible from "../common/makeCollapsible";
+import toggleMenu from "./toggleMenu";
 
 let projects = fetchAllProjects();
 
@@ -43,6 +44,10 @@ projectsSection.append(projectsHeader, projectsContent);
 
 menuContent.append(favouritesSection, projectsSection);
 
-Menu.append(menuContent);
+const transparentArea = document.createElement("div");
+transparentArea.classList.add("c-Menu__transparent-area");
+transparentArea.addEventListener("click", toggleMenu);
+
+Menu.append(menuContent, transparentArea);
 
 export default Menu;

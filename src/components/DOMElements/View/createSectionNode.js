@@ -5,6 +5,7 @@ import taskNode from "../Task";
 
 const createSectionNode = (section) => {
   const sectionContainer = document.createElement("section");
+  sectionContainer.setAttribute("data-uuid", section.id);
   sectionContainer.classList.add("c-View__section");
 
   const sectionContent = document.createElement("ul");
