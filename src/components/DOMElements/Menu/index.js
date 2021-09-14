@@ -15,7 +15,7 @@ Menu.classList.add("c-Menu", "js-Menu--toggleMenu");
 const menuContent = document.createElement("nav");
 menuContent.classList.add("c-Menu__content");
 
-const inboxLink = menuLink("h1", "Inbox", inboxIcon());
+const inboxLink = menuLink("h1", "Inbox", "inbox", inboxIcon());
 menuContent.append(inboxLink);
 
 const favouritesSection = menuSection();
@@ -24,7 +24,7 @@ const favouritesContent = menuSectionContent();
 for (let i = 1; i < projects.length; i++) {
   const project = projects[i];
   if (project.isFavourite) {
-    const menuLinkNode = menuLink("a", project.name);
+    const menuLinkNode = menuLink("a", project.name, project.id);
     favouritesContent.append(menuLinkNode);
   }
 }
@@ -36,7 +36,7 @@ const projectsHeader = menuSectionHeader("Projects");
 const projectsContent = menuSectionContent();
 for (let i = 1; i < projects.length; i++) {
   const project = projects[i];
-  const menuLinkNode = menuLink("a", project.name);
+  const menuLinkNode = menuLink("a", project.name, project.id);
   projectsContent.append(menuLinkNode);
 }
 makeCollapsible(projectsSection, projectsContent, projectsHeader);

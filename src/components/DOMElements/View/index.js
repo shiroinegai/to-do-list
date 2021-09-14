@@ -4,6 +4,6 @@ import createProjectNode from "./createProjectNode";
 const View = document.createElement("main");
 View.classList.add("c-View");
 
-View.append(createProjectNode(fetchProjectById("welcome")));
+View.append(createProjectNode(fetchProjectById("inbox")));
 
 export default View;
