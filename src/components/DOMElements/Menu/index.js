@@ -6,6 +6,7 @@ import menuSectionHeader from "./menuSectionHeader";
 import menuSectionContent from "./menuSectionContent";
 import makeCollapsible from "../common/makeCollapsible";
 import toggleMenu from "./toggleMenu";
+import menuLinkColorDecor from "./menuLinkColorDecor";
 
 let projects = fetchAllProjects();
 
@@ -24,7 +25,8 @@ const favouritesContent = menuSectionContent();
 for (let i = 1; i < projects.length; i++) {
   const project = projects[i];
   if (project.isFavourite) {
-    const menuLinkNode = menuLink("a", project.name, project.id);
+    const menuLinkNode = menuLink("li", project.name, project.id);
+    menuLinkNode.prepend(menuLinkColorDecor(project.color));
     favouritesContent.append(menuLinkNode);
   }
 }
@@ -36,7 +38,8 @@ const projectsHeader = menuSectionHeader("Projects");
 const projectsContent = menuSectionContent();
 for (let i = 1; i < projects.length; i++) {
   const project = projects[i];
-  const menuLinkNode = menuLink("a", project.name, project.id);
+  const menuLinkNode = menuLink("li", project.name, project.id);
+  menuLinkNode.prepend(menuLinkColorDecor(project.color));
   projectsContent.append(menuLinkNode);
 }
 makeCollapsible(projectsSection, projectsContent, projectsHeader);

@@ -46,6 +46,13 @@
     }
   }
 
+  &__color-decor {
+    margin: 0.3rem;
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+  }
+
   &__header-text,
   &__link-text {
     font-size: 1rem;
