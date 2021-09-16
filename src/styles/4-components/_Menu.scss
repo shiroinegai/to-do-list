@@ -14,13 +14,17 @@
 
   &__content {
     background: var(--color-secondary);
-    border-right: 0.0625rem solid var(--color-primary);
     flex-direction: column;
     gap: 0.75rem;
     height: 100%;
     padding: 1.5rem 1rem 1.5rem 2rem;
-    width: 75vw;
+    width: 100vw;
     @include hideScrollbarY;
+
+    @media (min-width: 320px) {
+      border-right: 0.0625rem solid var(--color-primary);
+      width: 75vw;
+    }
   }
 
   &--is-open {
@@ -31,6 +35,12 @@
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+  }
+
+  &__add-project-button {
+    border: 0.125rem dashed var(--color-primary);
+    border-radius: 0.5rem;
+    margin-left: auto;
   }
 
   &__header,
@@ -68,6 +78,8 @@
   }
 
   &__transparent-area {
-    width: 25vw;
+    @media (min-width: 320px) {
+      width: 25vw;
+    }
   }
 }

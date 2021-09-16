@@ -1,5 +1,5 @@
 import { fetchAllProjects } from "../../Project/api";
-import { inboxIcon } from "../Icons";
+import { inboxIcon, plusIcon } from "../Icons";
 import menuLink from "./menuLink";
 import menuSection from "./menuSection";
 import menuSectionHeader from "./menuSectionHeader";
@@ -33,8 +33,17 @@ for (let i = 1; i < projects.length; i++) {
 makeCollapsible(favouritesSection, favouritesContent, favouritesHeader);
 favouritesSection.append(favouritesHeader, favouritesContent);
 
+const addProjectButton = document.createElement("button");
+addProjectButton.classList.add("c-Menu__add-project-button");
+addProjectButton.append(plusIcon());
+addProjectButton.addEventListener("click", (e) => {
+  e.stopPropagation();
+  alert("+ clicked");
+});
+
 const projectsSection = menuSection();
 const projectsHeader = menuSectionHeader("Projects");
+projectsHeader.append(addProjectButton);
 const projectsContent = menuSectionContent();
 for (let i = 1; i < projects.length; i++) {
   const project = projects[i];
