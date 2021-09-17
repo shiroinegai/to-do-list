@@ -1,12 +1,14 @@
 /**
  * @function modal
- * @param {HTMLElement} element
  * @param {HTMLElement} content
  */
-const modal = (element, content) => {
-  element.classList.add("o-modal");
+const makeModal = (content) => {
+  const modalNode = document.createElement("div");
+  modalNode.classList.add("o-modal");
   content.classList.add("o-modal-content");
-  element.append(content);
+  modalNode.append(content);
+
+  return modalNode;
 };
 
-export default modal;
+export default makeModal;

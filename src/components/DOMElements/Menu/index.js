@@ -7,6 +7,7 @@ import menuSectionContent from "./menuSectionContent";
 import makeCollapsible from "../common/makeCollapsible";
 import toggleMenu from "./toggleMenu";
 import menuLinkColorDecor from "./menuLinkColorDecor";
+import Form from "../Form";
 
 let projects = fetchAllProjects();
 
@@ -38,7 +39,7 @@ addProjectButton.classList.add("c-Menu__add-project-button");
 addProjectButton.append(plusIcon());
 addProjectButton.addEventListener("click", (e) => {
   e.stopPropagation();
-  alert("+ clicked");
+  document.body.append(Form());
 });
 
 const projectsSection = menuSection();
