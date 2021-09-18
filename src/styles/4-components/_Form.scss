@@ -3,7 +3,20 @@
 ============================================================================= */
 
 .c-Form {
+  background: var(--color-secondary);
   display: flex;
+  gap: 0.5rem;
   flex-direction: column;
-  margin: 1rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 0.0625rem solid var(--color-primary);
+
+  &__header {
+    font-size: 1.125rem;
+  }
+
+  &__favourite {
+    display: flex;
+    gap: 0.25rem;
+  }
 }
