@@ -1,5 +1,21 @@
 import createNode from "../common/createNode";
 
+const cancelButton = createNode(
+  "button",
+  { class: "c-Form__button js-Form__button--cancel" },
+  "Cancel"
+);
+
+cancelButton.addEventListener("click", (e) => e.preventDefault());
+
+const addButton = createNode(
+  "button",
+  { class: "c-Form__button js-Form__button--add" },
+  "Add"
+);
+
+addButton.addEventListener("click", (e) => e.preventDefault());
+
 const projectForm = createNode(
   "form",
   { class: "c-Form" },
@@ -21,7 +37,8 @@ const projectForm = createNode(
       { class: "c-Form__label", for: "projectIsFavourite" },
       "Add to favourites"
     )
-  )
+  ),
+  createNode("div", { class: "c-Form__buttons" }, cancelButton, addButton)
 );
 
 export default projectForm;
