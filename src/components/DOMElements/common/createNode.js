@@ -2,7 +2,7 @@
  * @function createNode
  * @param {string} type
  * @param {Object} attributes
- * @param  {...string|HTMLElement} children
+ * @param  {...string|HTMLElement|SVGElement} children
  * @returns {HTMLElement}
  */
 const createNode = (type, attributes, ...children) => {

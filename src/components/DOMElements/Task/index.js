@@ -1,32 +1,29 @@
+import createNode from "../common/createNode";
 import makeCollapsible from "../common/makeCollapsible";
 
 import { checkIcon } from "../Icons";
 
 const taskNode = (task) => {
-  const taskItem = document.createElement("li");
-  taskItem.setAttribute("data-uuid", task.id);
-  taskItem.classList.add("c-Task");
+  const taskItem = createNode("li", { class: "c-Task", "data-uuid": task.id });
 
-  const taskContainer = document.createElement("div");
-  taskContainer.classList.add("c-Task__container");
+  const taskContainer = createNode("div", { class: "c-Task__container" });
 
-  const taskCheckButton = document.createElement("button");
-  taskCheckButton.classList.add("c-Task__check-button");
+  const taskCheckButton = createNode(
+    "button",
+    {
+      class: "c-Task__check-button",
+    },
+    checkIcon()
+  );
 
-  const taskHeader = document.createElement("h3");
-  taskHeader.classList.add("c-Task__header");
+  const taskHeader = createNode("h3", { class: "c-Task__header" }, task.header);
 
-  const taskDescription = document.createElement("p");
-  taskDescription.classList.add("c-Task__description");
+  const taskDescription = createNode("p", { class: "c-Task__description" });
 
-  const taskDetails = document.createElement("div");
-  taskDetails.classList.add("c-Task__details");
+  const taskDetails = createNode("div", { class: "c-Task__details" });
 
-  const taskChildren = document.createElement("div");
-  taskChildren.classList.add("c-Task__children");
+  const taskChildren = createNode("div", { class: "c-Task__children" });
 
-  taskCheckButton.append(checkIcon());
-  taskHeader.append(task.header);
   taskContainer.append(taskCheckButton, taskHeader);
 
   if (task.description) {
@@ -36,7 +33,9 @@ const taskNode = (task) => {
 
   if (task.tasks.length || task.dueDate || task.labels.length) {
     if (task.tasks.length) {
-      taskDetails.append(task.tasks.length);
+      taskDetails.append(
+        `${task.tasks.length} Sub-task${task.tasks.length > 1 ? "s" : ""}`
+      );
     }
     if (task.dueDate) {
       taskDetails.append(task.dueDate);
@@ -47,6 +46,7 @@ const taskNode = (task) => {
         taskDetails.append(label);
       }
     }
+    taskContainer.append(taskDetails);
   }
 
   taskItem.prepend(taskContainer);
