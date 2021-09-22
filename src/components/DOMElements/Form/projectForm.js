@@ -6,7 +6,12 @@ const cancelButton = createNode(
   "Cancel"
 );
 
-cancelButton.addEventListener("click", (e) => e.preventDefault());
+cancelButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log(e);
+  // @ts-ignore
+  e.target.offsetParent.remove();
+});
 
 const addButton = createNode(
   "button",
