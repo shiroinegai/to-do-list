@@ -13,4 +13,5 @@
 
 :root {
   --font-primary: "Recursive", sans-serif;
+  font-size: clamp(16px, calc(10px + 1.5vw), 32px);
 }
