@@ -1,7 +1,10 @@
+import createNode from "../common/createNode";
+
 const menuLinkColorDecor = (color) => {
-  const menuLinkColorDecorNode = document.createElement("div");
-  menuLinkColorDecorNode.classList.add("c-Menu__color-decor");
-  menuLinkColorDecorNode.style.backgroundColor = `#${color}`;
+  const menuLinkColorDecorNode = createNode("div", {
+    class: "c-Menu__color-decor",
+    style: `background-color: #${color}`,
+  });
 
   return menuLinkColorDecorNode;
 };

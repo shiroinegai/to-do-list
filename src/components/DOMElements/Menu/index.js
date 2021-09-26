@@ -8,14 +8,13 @@ import makeCollapsible from "../common/makeCollapsible";
 import toggleMenu from "./toggleMenu";
 import menuLinkColorDecor from "./menuLinkColorDecor";
 import Form from "../Form";
+import createNode from "../common/createNode";
 
 let projects = fetchAllProjects();
 
-const Menu = document.createElement("aside");
-Menu.classList.add("c-Menu", "js-Menu--toggleMenu");
+const Menu = createNode("aside", { class: "c-Menu js-Menu--toggleMenu" });
 
-const menuContent = document.createElement("nav");
-menuContent.classList.add("c-Menu__content");
+const menuContent = createNode("nav", { class: "c-Menu__content" });
 
 const inboxLink = menuLink("h1", "Inbox", "inbox", inboxIcon());
 menuContent.append(inboxLink);
@@ -34,9 +33,11 @@ for (let i = 1; i < projects.length; i++) {
 makeCollapsible(favouritesSection, favouritesContent, favouritesHeader);
 favouritesSection.append(favouritesHeader, favouritesContent);
 
-const addProjectButton = document.createElement("button");
-addProjectButton.classList.add("c-Menu__add-project-button");
-addProjectButton.append(plusIcon());
+const addProjectButton = createNode(
+  "button",
+  { class: "c-Menu__add-project-button" },
+  plusIcon()
+);
 addProjectButton.addEventListener("click", (e) => {
   e.stopPropagation();
   document.body.append(Form());

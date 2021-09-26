@@ -1,8 +1,7 @@
-const menuSection = () => {
-  const menuSectionNode = document.createElement("section");
-  menuSectionNode.classList.add("c-Menu__section");
+import createNode from "../common/createNode";
 
-  return menuSectionNode;
+const menuSection = () => {
+  return createNode("section", { class: "c-Menu__section" });
 };
 
 export default menuSection;
