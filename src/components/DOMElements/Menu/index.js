@@ -58,8 +58,9 @@ projectsSection.append(projectsHeader, projectsContent);
 
 menuContent.append(favouritesSection, projectsSection);
 
-const transparentArea = document.createElement("div");
-transparentArea.classList.add("c-Menu__transparent-area");
+const transparentArea = createNode("div", {
+  class: "c-Menu__transparent-area",
+});
 transparentArea.addEventListener("click", toggleMenu);
 
 Menu.append(menuContent, transparentArea);

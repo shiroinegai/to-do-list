@@ -11,7 +11,6 @@ const makeModal = (content) => {
       modalNode.remove();
     }
   });
-  content.classList.add("o-modal-content");
   modalNode.append(content);
 
   return modalNode;

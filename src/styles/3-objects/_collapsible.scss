@@ -4,7 +4,7 @@
 
 .o-collapsible {
   display: grid;
-  grid-template-columns: 1.25rem 1fr;
+  grid-template-columns: var(--size-l) 1fr;
 
   &__toggler {
     cursor: pointer;
